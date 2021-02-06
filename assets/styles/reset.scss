@@ -1,0 +1,54 @@
+*{
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: $color-main--green #EFF1F9;
+}
+
+body{
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+
+  background-color: #EFF1F9;
+  box-shadow: none;
+
+  @include mobile {
+    width: 0.4rem;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $color-main--green;
+  border-radius: 1rem;
+}
+
+input{
+  outline: none;
+}
+
+input:disabled{
+  background-color: inherit;
+}
+
+button{
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+ul, ol{
+  list-style: none;
+}
+
+fieldset{
+  border: none;
+}
+
+jdiv{
+  z-index: 9500!important;
+}

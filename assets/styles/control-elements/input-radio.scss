@@ -1,0 +1,138 @@
+.input-radio{
+  width: auto;
+  height: auto;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  position: relative;
+
+  input{
+    display: none;
+
+    &:checked + .input-radio__wrapper{
+      .input-radio__new{
+        //border: 0.2rem solid $color-main--lightgray;
+
+        &:before{
+          opacity: 1;
+        }
+
+      }
+
+      .input-radio__text{
+        color: $color-main--black
+      }
+    }
+  }
+
+  label{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    cursor: pointer;
+
+    &:hover{
+      .input-radio__text{
+        color: $color-main--black;
+      }
+
+      .input-radio__new{
+        //border: 0.2rem $black-main solid;
+        border: 0.2rem solid $color-main--darkgray;
+      }
+    }
+  }
+
+  &__wrapper{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__new{
+    width: 3.2rem;
+    height: 3.2rem;
+
+    margin-right: 1.6rem;
+
+    display: block;
+    flex-shrink: 0;
+
+    border: 0.2rem solid $color-main--middlegray;
+    border-radius: 50%;
+
+    position: relative;
+
+    transition: border ease 0.2s;
+
+    &:before{
+      content: '';
+      display: block;
+
+      width: 1.6rem;
+      height: 1.6rem;
+
+      border-radius: 50%;
+      background-color: $color-main--green;
+
+      position: absolute;
+      left: 50%;
+      top: 50%;
+
+      transform: translateX(-50%) translateY(-50%);
+
+      opacity: 0;
+
+      transition: opacity ease 0.2s;
+
+      @include tablet {
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+
+    @include tablet {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+  }
+
+  &__text{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    font-weight: 500;
+    color: $gray-main;
+
+    transition: color ease 0.2s;
+
+    @include font-size;
+  }
+
+  &--disabled{
+
+    label{
+      cursor: default;
+
+      &:hover{
+        .input-radio__text{
+          color: $gray-main;
+        }
+
+        .input-radio__new{
+          border: 0.2rem solid $color-main--middlegray;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+.input-number{
+  width: auto;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+
+  &__title{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin-bottom: 0.8rem;
+
+    color: $color-main--darkgray;
+
+    .tooltip{
+      margin-left: 0.8rem;
+    }
+
+    @include font-size;
+  }
+
+  &__wrapper{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    overflow: hidden;
+    border-radius: 1rem;
+    border: 0.1rem solid $color-main--lightgray;
+  }
+
+  &__footer{
+    width: 100%;
+    height: auto;
+
+    margin-top: 0.4rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    opacity: 0;
+    transition: opacity ease 0.35s;
+
+    &--active{
+      opacity: 1;
+    }
+
+    @include mobile {
+      margin-top: 0.3rem;
+    }
+  }
+
+  &__control-button{
+    width: 30%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    outline: none;
+    background-color: white;
+
+    font-size: 2rem;
+    line-height: 3.2rem;
+    font-weight: 500;
+    color: $color-main--darkgray;
+  }
+
+  &__input{
+    width: 40%;
+    height: 100%;
+
+    min-height: 3.2rem;
+
+    border-bottom: none;
+    border-top: none;
+    border-left: 0.1rem solid $color-main--lightgray;
+    border-right: 0.1rem solid $color-main--lightgray;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+
+    font-size: 1.4rem;
+    line-height: 3.2rem;
+    font-weight: 500;
+    color: $color-main--black;
+    text-align: center;
+
+    &[type="number"] {
+      -moz-appearance: textfield;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+    }
+  }
+}

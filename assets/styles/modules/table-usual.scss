@@ -1,0 +1,67 @@
+.table-usual{
+  margin-top: 1.6rem;
+
+  background-color: $color-main--white;
+  border-radius: 1rem;
+
+  &__row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 1.6rem;
+
+    border-bottom: 0.1rem solid $color-main--lightgray;
+
+    padding: 1.6rem 0;
+
+    @include tablet{
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+      grid-gap: 1.2rem
+    }
+  }
+
+  &__head{
+    padding-top: 0;
+
+    @include tablet{
+      display: none;
+    }
+  }
+
+  &__ceil {
+    display: grid;
+    align-items: center;
+
+    @include tablet{
+
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 2.4rem;
+
+      justify-items: flex-end;
+    }
+
+    .link{
+      display: flex;
+      align-content: center;
+    }
+  }
+
+  &__ceil-text{
+    color: $color-main--darkgray;
+    @include font-size;
+
+    &--black{
+      color: $color-main--black
+    }
+  }
+
+  &__mobile-title{
+    display: none;
+
+    @include tablet{
+      display: block;
+
+      justify-self: flex-start;
+    }
+  }
+}

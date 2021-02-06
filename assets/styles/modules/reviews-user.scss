@@ -1,0 +1,100 @@
+.reviews-user {
+  display: grid;
+  grid-template-columns: 15fr 7fr;
+  align-items: flex-start;
+  grid-gap: 4rem;
+
+  width: 100%;
+
+  @include tablet{
+    grid-template-columns: 100%;
+  }
+
+  &__container{
+    background-color: $color-main--white;
+    border-radius: 1rem;
+    padding: 2.4rem 4rem;
+
+    @include tablet{
+      padding: 2.4rem 1.6rem;
+    }
+
+    &--helper{
+      padding: 2.4rem;
+    }
+
+    &--center{
+      display: grid;
+      justify-items: center;
+    }
+  }
+
+  &__main-area{
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: 1.6rem;
+    align-content: flex-start;
+  }
+
+  &__helper-area{
+    display: grid;
+    grid-gap: 1.6rem;
+
+    @include tablet{
+      grid-row: 1;
+    }
+  }
+
+  &__btn-area{
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 0.8rem;
+
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+
+    .btn-main{
+      font-style: italic;
+
+      height: 2.8rem;
+      min-height: 2.8rem;
+      font-size: 1.2rem;
+
+      white-space: nowrap;
+
+      /*&:not(:first-child){*/
+      /*  margin-left: 0.8rem;*/
+      /*}*/
+    }
+  }
+
+  &__text{
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: $color-main--darkgray;
+
+    &--black{
+      color: $color-main--black;
+    }
+
+    &--red{
+      color: $color-main--red;
+    }
+
+    &--orange{
+      color: $color-main--orange;
+    }
+
+    &--green{
+      color: $color-main--green;
+    }
+
+    &--bold{
+      font-weight: bold;
+    }
+
+    &--align-center{
+      text-align: center;
+    }
+  }
+}

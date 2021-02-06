@@ -1,0 +1,15 @@
+.documentation-dev {
+  p{
+    margin: 1.6rem 0;
+
+    @include font-size();
+  }
+
+  li, b, a{
+    @include font-size();
+  }
+
+  li{
+    margin: 0.8rem 0;
+  }
+}

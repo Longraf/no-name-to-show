@@ -1,0 +1,1014 @@
+.road-map {
+  width: 100%;
+  height: auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 1.6rem;
+
+  position: relative;
+
+  @include mobile {
+    margin-right: 0.3rem;
+  }
+
+  &__form-head {
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    &--cursor-default {
+      cursor: default;
+    }
+  }
+
+  &__wrapper{
+    width: auto;
+    height: auto;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__state-navigation{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 6.4rem;
+
+    @include tablet{
+      position: inherit;
+    }
+
+    .skeleton-screen{
+
+      width: 32.8rem;
+      height: 23.6rem;
+      padding: 2.4rem 1.8rem 1.2rem;
+
+      background-color: $color-main--white;
+      border-radius: 1rem;
+
+      @include tablet{
+        display: none;
+      }
+
+      &__item{
+        margin-bottom: 1.2rem;
+        display: flex;
+      }
+      &__ico{
+        width: 1.6rem;
+        min-width: 1.6rem;
+        height: 1.6rem;
+        margin-right: 1.7rem;
+      }
+      &__text{
+        height: 1.6rem;
+        width: 23rem;
+      }
+
+      &__ico, &__text {
+        @extend %skeleton-animate;
+      }
+    }
+  }
+
+  .btn-main {
+    &--transparent {
+      height: 4rem;
+      min-height: 4rem;
+      margin-top: 1rem;
+      background-color: transparent;
+      color: $color-main--darkgray;
+      font-weight: normal;
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+
+      svg {
+        width: 1.3rem;
+        fill: $color-main--darkgray;
+        margin-right: 1.1rem;
+      }
+    }
+  }
+}
+
+.road-map-form {
+  width: 60rem;
+  height: auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 0.8rem;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.road-map-container {
+  width: 100%;
+  height: auto;
+
+  padding: 1.6rem 2.4rem 1.6rem 4rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+
+  background-color: white;
+  border-radius: 1rem;
+
+  @include mobile {
+    padding: 1.6rem;
+    width: 100%;
+  }
+
+  &__wrapper {
+    width: 100%;
+    height: auto;
+
+    max-height: 0;
+
+    overflow: hidden;
+    will-change: max-height;
+
+    .input-checkbox {
+      margin-top: 1.6rem;
+    }
+
+    .input-radio {
+      &__new {
+        width: 3.2rem;
+        height: 3.2rem;
+
+        margin-right: 0.8rem;
+
+        &:before {
+          width: 1.6rem;
+          height: 1.6rem;
+        }
+      }
+
+      &__text {
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+      }
+    }
+
+    .input-text {
+      margin-bottom: 0.1rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: $color-main--darkgray;
+
+    &--black {
+      color: $color-main--black
+    }
+
+    &--italic {
+      font-style: italic;
+    }
+  }
+
+  &__sub-title{
+    margin-top: 1.6rem;
+    font-size: 1.4rem;
+    color: $color-main--orange;
+
+    span{
+      font-size: inherit;
+      font-weight: bold;
+    }
+  }
+
+  &--flex {
+    display: flex;
+  }
+
+  &--confirm {
+    .road-map-container-head {
+
+      &__icon {
+        background-color: $color-main--green;
+        border-color: transparent;
+      }
+
+      svg {
+        fill: $color-main--white
+      }
+
+      &__title {
+        text-decoration: line-through;
+        color: $color-main--green;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &--open {
+    .road-map-container-head__accordion-toggle {
+      transform: rotate(0deg);
+    }
+  }
+
+  &--current {
+    .road-map-container-head {
+      &__icon {
+        background-color: $color-main--darkgray;
+        border-color: transparent;
+      }
+
+      &__title {
+        font-weight: bold;
+      }
+
+      svg {
+        fill: $color-main--white
+      }
+    }
+  }
+}
+
+.road-map-profile {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 4rem;
+  grid-row-gap: 0.8rem;
+
+  @include mobile {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  #phone:disabled{
+    color: $color-main--darkgray;
+  }
+}
+
+.road-map-legal-status {
+  &__wrapper{
+    width: 100%;
+    height: auto;
+
+    min-height: 5.2rem;
+
+    margin-bottom: 1.6rem;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    .input-radio{
+      margin-right: 2.4rem;
+      flex-shrink: 0;
+    }
+
+    .input-suggestion{
+      width: 100%;
+      height: auto;
+
+      &__footer{
+        display: none;
+      }
+
+      &__hidden-case{
+        top: 100%;
+      }
+    }
+  }
+
+  & > .input-radio {
+    margin-bottom: 1.6rem;
+  }
+}
+
+.road-map-analytics {
+  display: grid;
+  grid-template-columns: 100%;
+  justify-content: space-between;
+
+  @include mobile {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 1.2rem;
+  }
+
+  .btn-main {
+    max-width: 25.6rem;
+  }
+
+  .road-map-btn {
+    &--success {
+      margin-left: auto;
+    }
+  }
+}
+
+.road-map-electronic-management {
+  display: grid;
+  grid-template-columns: 1fr 4.3fr;
+  grid-gap: 2.4rem;
+
+  @include mobile {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 1.2rem;
+  }
+
+  &__link-area {
+    width: 100%;
+    height: auto;
+
+    min-height: 3.2rem;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1.2rem;
+
+    color: $color-main--darkgray;
+  }
+
+  .input-radio {
+    align-items: flex-start;
+
+    &__new {
+      margin-right: 1.6rem;
+    }
+  }
+
+  .input-select-text {
+    margin-top: 0.8rem;
+  }
+}
+
+.road-map-electronic-signature {
+  width: 100%;
+  height: auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 1.6rem;
+
+  @include mobile {
+    grid-template-columns: repeat(1, 100%);
+    grid-gap: 1.6rem;
+  }
+
+  &__wrapper{
+    width: 100%;
+    height: auto;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 1.6rem;
+  }
+
+  .input-radio {
+    min-width: 12rem;
+
+    &__new {
+      margin-right: 1.6rem;
+    }
+  }
+
+  .input-radio__text {
+    display: flex;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  .input-select__current-text{
+    @include mobile {
+      max-width: 14rem;
+    }
+  }
+}
+
+.road-map-marketplace-registration {
+  &__wrapper {
+    margin-top: 1.6rem;
+
+    display: flex;
+    flex-direction: column;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  .link {
+    margin-right: 2.4rem;
+  }
+
+  .input-checkbox {
+    margin-top: 1.6rem;
+  }
+}
+
+.road-map-price-list {
+  &__wrapper {
+    max-width: 35.4rem;
+
+    margin-top: 2.4rem;
+    margin-bottom: 0.6rem;
+
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 1.6rem;
+
+    @include mobile {
+      max-width: 26.2rem;
+      grid-template-columns: 14.5rem 10rem;
+
+      margin-bottom: 1.3rem;
+    }
+  }
+
+  .input-checkbox {
+    margin-top: 1.6rem;
+  }
+}
+
+.road-map-brand {
+  .road-map-container {
+    &__title {
+      margin-bottom: 1.6rem;
+    }
+  }
+}
+
+.road-map-catalogue {
+  &__inner{
+    width: 100%;
+    height: auto;
+
+    margin-top: 1.6rem;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 1.6rem;
+
+    position: relative;
+  }
+
+  .btn-main {
+    margin-top: 1.6rem;
+    margin-right: auto;
+  }
+}
+
+.road-map-productions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1.6rem 4rem;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+
+  .road-map-container__title {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    @include mobile {
+      grid-column-start: 1;
+      grid-column-end: 1;
+    }
+  }
+
+  .input-checkbox{
+    margin-top: 0;
+  }
+}
+
+.road-map-documentations {
+  &__inner{
+    width: 100%;
+    height: auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 1.6rem;
+
+    position: relative;
+  }
+
+  &__case {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .link {
+    @include mobile {
+      margin-top: 0.8rem;
+    }
+  }
+
+  .btn-main {
+    margin-top: 0.5rem;
+    margin-right: auto;
+  }
+
+  .input-select {
+    &:not(:first-child) {
+      margin-top: 1.6rem;
+    }
+  }
+}
+
+.road-map-packing {
+  &__title{
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 400;
+    color: $color-main--orange;
+
+    a{
+      font-size: inherit;
+      line-height: inherit;
+      font-weight: inherit;
+      color: inherit;
+
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__sub-title{
+    margin-top: 2.4rem;
+  }
+
+  &__inner {
+    width: 100%;
+    height: auto;
+
+    margin-top: 1.6rem;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  &__helper-text{
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+    margin-bottom: 1.8rem;
+
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 400;
+    color: $color-main--darkgray;
+  }
+
+  .btn-main {
+    margin-top: -3.4rem;
+    margin-left: auto;
+
+    @include mobile {
+      margin-top: 0;
+    }
+  }
+
+  .input-text {
+    max-width: 4.8rem;
+
+    input{
+      padding: 0.2rem 0;
+    }
+
+    @include mobile {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+}
+
+.road-map-shipment {
+  &__description{
+    color: $color-main--orange;
+
+    a{
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      color: inherit;
+
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+
+  .road-map-container__title {
+    margin: 0.8rem 0 2.4rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .input-suggestion {
+    margin-top: 0.8rem;
+  }
+}
+
+.road-map-reviews {
+  &__title{
+    color: $color-main--orange;
+  }
+
+  &__inner {
+    margin-top: 2.4rem;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__sign {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    margin-left: 0.8rem;
+
+    color: $color-main--darkgray;
+
+    @include mobile {
+      margin-bottom: -0.8rem;
+    }
+  }
+
+  .road-map-container__title b{
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  /*
+
+  .input-text {
+    margin-top: 2.4rem;
+    margin-bottom: 1.6rem;
+
+    @include mobile {
+      margin-top: 1.6rem;
+      margin-right: 1rem;
+      margin-bottom: 0;
+    }
+
+    &__wrapper {
+      margin-left: 1.3rem;
+      margin-right: 1rem;
+    }
+
+    label {
+      flex-direction: row;
+      align-items: flex-end;
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-column-gap: 0.8rem;
+    }
+
+    input {
+      margin-right: 1.2rem;
+      @include mobile {
+        padding: 0;
+      }
+    }
+
+    &__title {
+      line-height: 3.2rem;
+    }
+
+    &__footer {
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
+
+    &__title {
+      white-space: pre;
+
+      @include mobile {
+        white-space: normal;
+        line-height: 1.6rem;
+      }
+    }
+  }
+
+  */
+}
+
+.road-map-logistics {
+  .btn-main {
+    width: 29.6rem;
+    margin-top: 1.6rem;
+
+    @include mobile {
+      width: 25.2rem;
+    }
+  }
+
+  .road-map-btn--success {
+    width: 12.5rem;
+    margin-top: -4rem;
+    margin-left: auto;
+    height: 3.2rem;
+
+    @include mobile {
+      margin-top: 1.6rem;
+    }
+  }
+}
+
+.road-map-recommendations {
+  &__inner {
+    margin-top: 1.6rem;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .btn-main {
+    padding: 0 1.6rem;
+    @include mobile {
+      width: 100%;
+    }
+  }
+}
+
+.road-map-waiting {
+
+  padding: 1.6rem 2.4rem 1.6rem 4rem;
+  background-color: white;
+  border-radius: 1rem;
+
+  width: 60rem;
+  height: 24.3rem;
+
+  display: flex;
+  align-items: center;
+
+  margin-top: 0.8rem;
+
+  @include mobile {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__title{
+    font-weight: 500;
+    font-size: 2.0rem;
+    line-height: 3.2rem;
+
+    color: $color-main--black;
+  }
+
+  &__text{
+    margin-top: 1.6rem;
+
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 2.0rem;
+
+    color: $color-main--black;
+  }
+}
+
+.road-map-complete {
+  max-width: 93.2rem;
+  width: 100%;
+
+  padding-bottom: 7rem;
+  padding-left: 8rem;
+
+  display: grid;
+  grid-template-areas:  "text logo" "text logo" "btn  logo";
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: 3fr 1fr;
+
+  z-index: 0;
+
+  @include mobile {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:  "text"
+    "logo"
+    "btn";
+
+    padding-bottom: 3.2rem;
+    padding-left: 3.8rem;
+  }
+
+  &__text-area{
+    max-width: 34.5rem;
+
+    grid-area: text
+  }
+
+  &__btn-area {
+    grid-area: btn;
+
+    margin-top: 3.2rem;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    grid-area: logo;
+    width: 28rem;
+    height: 28rem;
+  }
+
+
+  &__text {
+    font-size: 1.4rem;
+    line-height: 2.0rem;
+    font-weight: 500;
+    color: $color-main--black;
+
+
+    &--big {
+      font-size: 2.0rem;
+      line-height: 3.2rem;
+    }
+  }
+
+  &__title {
+    margin-top: 2.4rem;
+    margin-bottom: 2.1rem;
+
+    color: $color-main--green;
+  }
+
+  &__subtitle {
+    color: $color-main--green;
+  }
+
+  &__description{
+    margin-top: 2.4rem;
+
+    color: $color-main--darkgray;
+  }
+
+  &-enter-active, &-leave-active{
+    transition: opacity ease 0.35s, transform ease 0.35s, margin-top ease 0.35s;
+  }
+
+  &-enter, &-leave-active{
+    opacity: 0;
+    transform: translateY(100%);
+    margin-top: -38rem;
+  }
+
+  .btn-main {
+    padding: 0 2rem;
+    width: fit-content;
+    margin-right: 2.4rem;
+    margin-bottom: 1rem;
+
+    @include mobile {
+      width: 100%;
+
+      &:first-of-type{
+        margin-right: 0;
+      }
+
+      &:not(:last-child){
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.road-map-btn {
+  &--success {
+    width: 12.5rem;
+
+    @include mobile {
+      width: 10rem;
+      height: 3.2rem;
+    }
+  }
+}
+
+.road-map-mobile-menu-btn {
+  z-index: 25;
+  position: fixed;
+  bottom: 9.5rem;
+  right: 2.75rem;
+  border-radius: 50%;
+  width: 5.6rem;
+  height: 5.6rem;
+  background: #FFFFFF;
+  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &--none {
+    display: none;
+  }
+
+  &__line {
+    width: 2.0rem;
+    height: 0.2rem;
+    background: $color-main--green;
+    border-radius: 0.2rem;
+
+    &:not(:last-child) {
+      margin-bottom: 0.4rem;
+    }
+  }
+}
+
+.road-map.custom-loading {
+  .input-suggestion,
+  .input-select,
+  .input-select-text,
+  .input-text,
+  .input-radio,
+  .input-checkbox label,
+  .btn-main,
+  .road-map-head,
+  .road-map-container__title,
+  .road-map-container__sub-title,
+  .road-map-state__list-item,
+  .road-map-packing__helper-text,
+  .road-map-electronic-management > .road-map-container__inner,
+  .road-map-electronic-management__inner,
+  .road-map-electronic-management__link-area,
+  .road-map-packing__title,
+  .road-map-documentations .link,
+  .road-map-reviews__sign,
+  .road-map-complete__text,
+  .road-map-complete__logo-area,
+  .road-map-marketplace-registration__inner {
+    @extend %skeleton-animate;
+  }
+
+  .btn--green-invert{
+    border: 0.1rem solid rgba(111, 188, 154, 0);
+  }
+
+  .btn--disabled{
+    border: 0.1rem solid rgba(201, 205, 224, 0);
+  }
+}
+
+.road-map.custom-loading--removing {
+  .input-suggestion,
+  .input-select,
+  .input-select-text,
+  .input-text,
+  .input-radio,
+  .input-checkbox label,
+  .btn-main,
+  .road-map-head,
+  .road-map-container__title,
+  .road-map-container__sub-title,
+  .road-map-state__list-item,
+  .road-map-electronic-management > .road-map-container__inner,
+  .road-map-documentations .link,
+  .road-map-reviews__sign,
+  .road-map-complete__text,
+  .road-map-complete__logo-area,
+  .road-map-marketplace-registration__inner {
+    @extend %skeleton-animate--removing;
+  }
+
+  .btn--green-invert{
+    border: 0.1rem solid #6FBC9A;
+  }
+
+  .btn--disabled{
+    border: 0.1rem solid #C9CDE0;
+  }
+}

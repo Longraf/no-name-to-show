@@ -1,0 +1,50 @@
+.profile {
+  //padding-right: 56px;
+  &__head {
+    padding-bottom: 0;
+  }
+
+  &__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    //grid-gap: 0.8rem 1.2rem;
+    //margin: 1.6rem 0;
+    margin: 1.6rem 0 0.8rem;
+
+    @include mobile {
+      width: 100vw;
+
+      overflow-x: scroll;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    a {
+      display: block;
+
+      padding: 0.8rem 1.6rem;
+      margin-right: 1.2rem;
+      margin-bottom: 0.8rem;
+
+      white-space: pre;
+      @include mobile {
+        flex-shrink: 0;
+        &:last-child {
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -1.6rem;
+            width: 1.6rem;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}

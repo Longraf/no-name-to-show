@@ -1,0 +1,135 @@
+.ease-opacity, .page {
+  &-enter-active, &-leave-active{
+    transition: opacity ease 0.35s;
+  }
+
+  &-enter, &-leave-active{
+    opacity: 0;
+  }
+
+  &--short{
+    &-enter-active, &-leave-active{
+      transition: opacity ease 0.275s;
+    }
+
+    &-enter, &-leave-active{
+      opacity: 0;
+    }
+  }
+
+  &--long{
+    &-enter-active, &-leave-active{
+      transition: opacity ease 0.275s;
+    }
+
+    &-enter, &-leave-active{
+      opacity: 0;
+    }
+  }
+}
+
+.page-user-animation{
+  &-enter-active, &-leave-active{
+    .marketplaces-storage, .profile-marketplaces, .personal-info {
+      transition: opacity ease 0.35s;
+    }
+  }
+
+  &-enter, &-leave-active{
+    .marketplaces-storage, .profile-marketplaces, .personal-info {
+      opacity: 0;
+    }
+  }
+}
+
+.helper-popup{
+  &-enter-active{
+    transition: opacity ease 0.5s;
+  }
+
+  &-leave-active{
+    transition: opacity ease 0.5s, transform ease-in 0.5s;
+  }
+
+  &-enter{
+    opacity: 0;
+  }
+
+  &-leave-to{
+    transform: translateY(-10rem);
+    opacity: 0;
+  }
+}
+
+.connect-marketplace{
+  &-enter, &-leave-to {
+    background-color: rgba(0, 0, 0, 0);
+
+    .marketplace-popup__wrapper{
+      opacity: 0;
+      transform: translateY(-5%);
+    }
+  }
+}
+
+.skeleton-animate{
+  &-enter-active, &-leave-active {
+    transition: opacity 0.175s;
+  }
+
+  &-enter, &-leave-active {
+    opacity: 0;
+  }
+}
+
+.tooltip__content{
+  &-enter-active, &-leave-active {
+    transition: opacity .35s, transform ease 0.35s;
+  }
+
+  &-enter, &-leave-active {
+    opacity: 0;
+    transform: translateY(calc(-100% - 1.6rem)) translateX(-100%);
+  }
+}
+
+.notifications-drop{
+  &-enter-active, &-leave-active {
+    transition: opacity .35s, transform ease 0.35s;
+  }
+
+  &-enter, &-leave-active {
+    opacity: 0;
+    transform: translateY(4.8rem)!important;
+  }
+}
+
+.mobile-menu{
+  &-enter {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0);
+
+    .mobile-menu__wrapper{
+      transform: translateX(-100%);
+    }
+  }
+
+  &-enter-active {
+    transition: opacity ease 0.35s, background-color ease 0.35s;
+
+    .mobile-menu__wrapper{
+      transition: transform ease 0.35s;
+    }
+  }
+
+  &-leave-active{
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0);
+    transition: opacity ease 0.35s, background-color ease 0.35s;
+
+    .mobile-menu__wrapper{
+      transition: transform ease 0.35s;
+      transform: translateX(-100%);
+    }
+  }
+}

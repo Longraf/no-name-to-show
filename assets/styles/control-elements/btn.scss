@@ -1,0 +1,319 @@
+//TODO проблема. Вынести в нужные места только стили кнопок которые там используются
+
+.btn{
+  &-main{
+    width: auto;
+    height: auto;
+
+    min-height: 4rem;
+    padding: 0 1.6rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    outline: none;
+    border: none;
+    text-decoration: none;
+
+    font-weight: 500;
+
+    transition: background-color ease 0.25s, color ease 0.25s, border ease 0.25s;
+
+    cursor: pointer;
+
+    @include font-size();
+
+    @include mobile{
+      min-height: 3.2rem;
+    }
+  }
+
+  &--small {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 3.2rem;
+    padding: 0.4rem 2rem 0.4rem;
+
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    text-decoration: none;
+
+    border-radius: 2.2rem;
+
+    transition: background-color ease 0.25s, color ease 0.25s, border ease 0.25s;
+  }
+
+  &--blue{
+    border-radius: 3rem;
+    background-color: $blue-main;
+    border: 0.1rem solid $blue-main;
+    color: white;
+
+    svg{
+      width: 1.6rem;
+      height: 1.6rem;
+
+      margin-right: 1.2rem;
+
+      use{
+        fill: white;
+        transition: fill ease 0.25s;
+      }
+    }
+
+    &:hover{
+      background-color: white;
+      color: $blue-main;
+
+      svg{
+        use{
+          fill: $blue-main;
+        }
+      }
+    }
+  }
+
+  &--gray {
+    color: $color-main--black;
+    background-color: $color-main--middlegray;
+    border: 0.1rem solid $color-main--middlegray;
+    border-radius: 3rem;
+
+    &:hover,
+    &:focus,
+    &.is-active {
+      background-color: $color-main--white;
+    }
+  }
+
+  &--gray-filled {
+    color: $color-main--darkgray;
+    background-color: transparent;
+    border: 0.1rem solid $color-main--darkgray;
+
+    &:hover,
+    &:focus,
+    &.is-active {
+      color: $color-main--white;
+      background-color: $color-main--darkgray;
+    }
+  }
+
+  &--gray-outline{
+    border-radius: 1rem;
+    background-color: white;
+    border: 0.1rem solid $gray-main;
+    color: $gray-main;
+
+    svg{
+      width: 1.6rem;
+      height: 1.6rem;
+
+      margin-right: 1.2rem;
+
+      use{
+        fill: $gray-main;
+        transition: fill ease 0.25s;
+      }
+    }
+
+    &:hover{
+      border: 0.2rem solid $black-main;
+      color: $black-main;
+
+      svg{
+        use{
+          fill: $black-main;
+        }
+      }
+    }
+
+    &-disabled{
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+
+  &--barcode{
+    margin-left: 0.8rem;
+
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    position: relative;
+
+    font-size: 1.6rem;
+    line-height: 3.2rem;
+    font-weight: 500;
+    color: $gray-main;
+
+    text-decoration: underline;
+
+    &:after{
+      content: attr(helper-title);
+      display: block;
+
+      padding: 0.4rem 0.6rem;
+
+      position: absolute;
+      top: -2.4rem;
+      right: -1.6rem;
+
+      transform: translateX(100%) translateY(25%);
+
+      white-space: nowrap;
+      background-color: white;
+      border: 0.1rem solid $black-main;
+      border-radius: 0.4rem;
+      z-index: 3;
+      pointer-events: none;
+      opacity: 0;
+
+      color: $black-main;
+      font-size: 1.6rem;
+
+      transition: transform ease 0.25s 0.25s, opacity ease 0.25s 0.25s;
+    }
+
+    &:hover{
+      text-decoration: none;
+
+      &:after{
+        opacity: 1;
+        transform: translateX(100%) translateY(0);
+      }
+    }
+  }
+
+  //new styles
+
+  &--green{
+    border-radius: 3rem;
+    background-color: $color-main--green;
+    border: 0.1rem solid $color-main--green;
+    color: white;
+
+    svg{
+      min-width: 1.6rem;
+      width: 1.6rem;
+      height: 1.6rem;
+
+      margin-right: 1.2rem;
+
+      use{
+        fill: white;
+        transition: fill ease 0.25s;
+      }
+    }
+
+    &:hover{
+      background-color: transparent;
+      color: $color-main--green;
+
+      svg{
+        use{
+          fill: $color-main--green;
+        }
+      }
+    }
+  }
+
+  &--orange{
+    border-radius: 3rem;
+    background-color: $color-main--orange;
+    border: 0.1rem solid $color-main--orange;
+    color: white;
+
+    svg{
+      min-width: 1.6rem;
+      width: 1.6rem;
+      height: 1.6rem;
+
+      margin-right: 1.2rem;
+
+      use{
+        fill: white;
+        transition: fill ease 0.25s;
+      }
+    }
+
+    &:hover{
+      background-color: transparent;
+      color: $color-main--orange;
+
+      svg{
+        use{
+          fill: $color-main--orange;
+        }
+      }
+    }
+  }
+
+  &--green-invert{
+    border-radius: 3rem;
+    background-color: transparent;
+    border: 0.1rem solid $color-main--green;
+    color: $color-main--green;
+
+    &:hover{
+      background-color: $color-main--green;
+      color: white;
+    }
+  }
+
+  &--transparent{
+    background-color: transparent;
+    color: $color-main--darkgray;
+
+    svg{
+      fill: $color-main--darkgray;
+      width: 1.3rem;
+      height: 1.3rem;
+      margin-right: 1.1rem;
+    }
+  }
+
+  &--disabled{
+    border-radius: 3rem;
+    background-color: transparent;
+    border: 0.1rem solid $color-main--middlegray;
+    color: $color-main--middlegray;
+
+    cursor: not-allowed;
+
+    svg{
+      min-width: 1.6rem;
+      width: 1.6rem;
+      height: 1.6rem;
+
+      margin-right: 1.2rem;
+
+      use{
+        fill: $color-main--darkgray;
+        transition: fill ease 0.25s;
+      }
+    }
+  }
+
+  &__desktop-text {
+    display: inline;
+    font-size: inherit;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__mobile-text {
+    display: none;
+    font-size: inherit;
+
+    @include mobile {
+      display: inline;
+    }
+  }
+}

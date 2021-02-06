@@ -1,0 +1,65 @@
+@keyframes loading {
+  to {
+    background-position: 127.5% 0;
+  }
+}
+
+%skeleton-animate{
+  position: relative;
+  pointer-events: none;
+
+  &:before, &:after{
+    transition: opacity ease 0.35s;
+  }
+
+  &:before{
+    content: '';
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+
+    z-index: 3;
+    background-color: $color-main--lightgray;
+    background-image: linear-gradient( 100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80% );
+    background-size: 25% 100%;
+    background-position: -100% 0;
+    background-repeat: no-repeat;
+    border-radius: 0.8rem;
+
+    will-change: background-position;
+
+    animation: loading ease 1s infinite;
+  }
+
+  &:after{
+    content: '';
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+
+    z-index: 2;
+    background-color: white;
+  }
+}
+
+%skeleton-animate--removing{
+  &:before, &:after{
+    opacity: 0;
+  }
+}
