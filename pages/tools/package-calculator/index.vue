@@ -184,7 +184,7 @@
     directives: { mask },
     head: () => {
       return {
-        title: 'Расчёт размера коробок по размеру упаковки товара, до 1 куб.м'
+        title: 'Расчёт размера коробок по размеру'
       }
     },
     data: () => {
@@ -252,57 +252,6 @@
             size: 44484.375,
           },
         ],
-        DefaultSizesSort: [
-          {
-            sizes: [60, 40, 40],
-            size: 96000,
-          },
-          {
-            sizes: [40, 40, 30],
-            size: 48000,
-          },
-          {
-            sizes: [37.5, 36.5, 32.5],
-            size: 44484.375,
-          },
-          {
-            sizes: [38.0, 28.7, 22.8],
-            size: 24865.680,
-          },
-          {
-            sizes: [30.5, 25.0, 22.0],
-            size: 16775.000,
-          },
-          {
-            sizes: [34.0, 20.0, 20.0],
-            size: 13600.000,
-          },
-          {
-            sizes: [42.5, 19.0, 16.5],
-            size: 13323.75,
-          },
-          {
-            sizes: [25.0, 25.0, 15.0],
-            size: 9375.000,
-          },
-          {
-            sizes: [30.5, 22.0, 12.5],
-            size: 8387.500,
-          },
-          {
-            sizes: [21.5, 21.5, 15.0],
-            size: 6933.750,
-          },
-          {
-            sizes: [26.0, 16.5, 9.5],
-            size: 4075.5,
-          },
-
-          {
-            sizes: [17.0, 12.0, 10.0],
-            size: 2040,
-          },
-        ],
         LocationOption: [
           [0, 1, 2],
           [0, 2, 1],
@@ -316,6 +265,8 @@
       }
     },
     mounted() {
+      // Сортировка коробок по объёму
+      this.DefaultSizes.sort((a,b) => a.size - b.size).reverse()
     },
     computed: {
       UserSizes(){
@@ -323,11 +274,11 @@
         return UserData.sort((a,b) => b - a)  // Сортирует от большего к меньшему значение
       },
 
-      /* Массив DefaultSizesSort и UserSizes к этому моменту уже отсортированы от большего к меньшему
+      /* Массив DefaultSizes и UserSizes к этому моменту уже отсортированы от большего к меньшему
       * свойство фильтрует коробки которые меньше по габаритному размеру чем товар
       * */
       DefaultSizesFiltered(){
-        return this.DefaultSizesSort
+        return this.DefaultSizes
           .filter(item => item.sizes[0] >= this.UserSizes[0])
           .filter(item => item.sizes[1] >= this.UserSizes[1])
           .filter(item => item.sizes[2] >= this.UserSizes[2])
